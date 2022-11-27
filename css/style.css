@@ -56,6 +56,7 @@ p.title_product {
     color: black;
     font-size: large;
     font-weight: bold;
+    padding: 0 25px;
 }
 p.price_product {
     text-align: center;

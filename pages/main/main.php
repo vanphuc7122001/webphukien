@@ -19,6 +19,12 @@
 				case 'contact':
 					require_once './pages/main/contact.php';
 					break;
+				case 'product_category':
+					require_once './pages/main/product_category.php';
+					break;
+				case 'product_detail':
+					require_once './pages/main/product_detail.php';
+					break;
 				default:
 					require_once './pages/main/home.php';
 					break;

@@ -28,22 +28,28 @@
   </div>
 </div>
 
-
+<?php 
+  $sql = "select product.*, product_category.name as name_category from product 
+          join product_category on product.id_category = product_category.id";
+  $result = mysqli_query($connect,$sql);
+ ?>
 <h3 class="font-weight-light text-center my-4 text-danger">TẤT CẢ SẢN PHẨM</h3>
-<ul class="product_list">                                  
-  <li>
-    <div class="post-item">
-      <div class="product-top">
-        <a href="#">
-          <div class="product-img">
-              <img src="./img/opi13.png">
+    <ul class="product_list"> 
+    <?php foreach ($result as $key => $each): ?>                                               
+      <li>
+        <div class="post-item">
+          <div class="product-top">
+            <a href="#">
+              <div class="product-img">
+                  <img src="./admin/modules/product/uploads/<?php echo $each['image'] ?>">
+              </div>
+                
+                <p class="title_product"><?php echo $each['name'] ?></p>
+                <p class="price_product"><?php echo number_format($each['price']) . "VND" ?></p>
+                <p style="text-align: center; color:rgb(170, 170, 170)"><?php echo $each['name_category'] ?></p>
+            </a>
           </div>
-            
-            <p class="title_product">JORDAN 7 RETRO FLINT</p>
-            <p class="price_product">9.000.000 VNĐ</p>
-            <p style="text-align: center; color:rgb(170, 170, 170)">Danh mục: JORDAN 7</p>
-        </a>
-      </div>
-    </div>
-  </li>
-</ul>
+        </div>
+      </li>
+      <?php endforeach ?>          
+    </ul>

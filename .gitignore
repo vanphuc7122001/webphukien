@@ -1,5 +1,5 @@
-./font
-./bootstrap
-./admin/root/font
-./admin/root/bootstrap
-./admin/root/js/ckeditor
+font/
+bootstrap/
+admin/root/font/
+admin/root/bootstrap/
+admin/root/js/ckeditor/

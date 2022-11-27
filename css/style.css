@@ -75,15 +75,27 @@ ul.product_list li a {
     text-decoration: center;
     text-decoration: none;
 }
-ul.product_list li img {
-    width: 95%;
-    height: 220px;
-}
 
 ul.product_list li .post-item{
     position: relative;
     overflow: hidden;
 }
+
+ul.product_list li .post-item .product-top a .product-img{
+    width: 100%;
+    text-align: center;
+}
+
+ul.product_list li img {
+    width: 95%;
+    height: 200px;
+    transition: 0.4s;
+}
+
+ul.product_list li img:hover{
+    transform: scale(1.02);
+}
+
 ul.product_list li .post-item a.buy-now{
     text-transform: uppercase;
     text-decoration: none;

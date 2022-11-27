@@ -35,7 +35,10 @@
     <div class="post-item">
       <div class="product-top">
         <a href="#">
-            <img src="">
+          <div class="product-img">
+              <img src="./img/opi13.png">
+          </div>
+            
             <p class="title_product">JORDAN 7 RETRO FLINT</p>
             <p class="price_product">9.000.000 VNĐ</p>
             <p style="text-align: center; color:rgb(170, 170, 170)">Danh mục: JORDAN 7</p>

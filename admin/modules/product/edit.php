@@ -28,7 +28,7 @@
 				</div>
 				<div class="form-group font-16">
 					<label for="image">Hình ảnh</label>
-					<img src="../modules/product/uploads/<?php echo $each['image'] ?>" alt="">
+					<img src="../modules/product/uploads/<?php echo $each['image'] ?>" alt="" width="150px">
 	    			<input type="file" class="form-control-file font-12" placeholder="Nhập tên danh mục cần thêm" id="image" name="image">
 				</div>
 				<div class="form-group font-16">

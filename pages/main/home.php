@@ -39,7 +39,7 @@
       <li>
         <div class="post-item">
           <div class="product-top">
-            <a href="#">
+            <a href="?action=product_detail&id=<?php echo $each['id'] ?>">
               <div class="product-img">
                   <img src="./admin/modules/product/uploads/<?php echo $each['image'] ?>">
               </div>

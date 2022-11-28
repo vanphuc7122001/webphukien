@@ -25,6 +25,9 @@
 				case 'product_detail':
 					require_once './pages/main/product_detail.php';
 					break;
+				case 'add_to_cart':
+					require_once './pages/main/cart/add_to_cart.php';
+					break;
 				default:
 					require_once './pages/main/home.php';
 					break;

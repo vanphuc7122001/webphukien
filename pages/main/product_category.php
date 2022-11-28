@@ -3,12 +3,11 @@
   $sql = "select product.*, product_category.name as name_category from product 
           join product_category on product.id_category = product_category.id where product.id_category = '$id'";
   $result = mysqli_query($connect,$sql);
-
-  while ($row = mysqli_fetch_array($result)) {
+  $row = mysqli_fetch_assoc($result); // hàm này lấy về 1 hàng kết quả
  ?>
     <h4 class="text-danger"><?php echo $row['name_category'] ?></h4>
     <ul class="product_list"> 
-    <?php } foreach ($result as $each): ?>                                               
+    <?php  foreach ($result as $each): ?>                                               
       <li>
         <div class="post-item">
           <div class="product-top">
@@ -18,7 +17,7 @@
               </div>
                 
                 <p class="title_product"><?php echo $each['name'] ?></p>
-                <p class="price_product"><?php echo number_format($each['price']) . "VND" ?></p>
+                <p class="price_product"><?php  echo number_format($each['price'],0,"",".") . ' VND' ?></p>
                 <p style="text-align: center; color:rgb(170, 170, 170)"><?php echo $each['name_category'] ?></p>
             </a>
           </div>

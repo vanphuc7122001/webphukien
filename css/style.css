@@ -5,7 +5,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	text-decoration: none;
-/*	list-style: none;*/
+	list-style: none;
 }
 
 html{
@@ -94,7 +94,7 @@ ul.product_list li img {
 }
 
 ul.product_list li img:hover{
-    transform: scale(1.02);
+    transform: scale(1.03);
 }
 
 ul.product_list li .post-item a.buy-now{
@@ -132,3 +132,50 @@ ul.product_list li:hover .post-item{
     border: 2px solid #948a8a;
     transition: all 0.25s ease-in-out;
 }
+
+
+/*Tab*/
+
+
+* Tabs */
+.tabs {
+  width: 600px;
+  background-color: #09F;
+  border-radius: 5px 5px 5px 5px;
+}
+ul#tabs-nav {
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+  overflow: auto;
+}
+ul#tabs-nav li {
+  float: left;
+  font-weight: bold;
+  margin-right: 2px;
+  padding: 8px 10px;
+  border-radius: 5px 5px 5px 5px;
+  background-color: #ccc;
+  cursor: pointer;
+}
+ul#tabs-nav li:hover,
+ul#tabs-nav li.active {
+  background-color: #08E;
+}
+
+ul#tabs-nav li.active a{
+  color: #fff;
+}
+
+
+#tabs-nav li a {
+  text-decoration: none;
+  color: #000;
+}
+.tab-content {
+  padding: 10px;
+  border: 5px solid #09F;
+  background-color: #FFF;
+}
+
+

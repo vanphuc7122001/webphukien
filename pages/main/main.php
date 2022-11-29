@@ -28,6 +28,15 @@
 				case 'add_to_cart':
 					require_once './pages/main/cart/add_to_cart.php';
 					break;
+				case 'register':
+					require_once './pages/main/signup.php';
+					break;
+				case 'login':
+					require_once './pages/main/login.php';
+					break;
+				case 'logout':
+					require_once './pages/main/process/process_logout.php';
+					break;
 				default:
 					require_once './pages/main/home.php';
 					break;

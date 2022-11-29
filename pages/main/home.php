@@ -47,9 +47,24 @@
                 <p class="title_product"><?php echo $each['name'] ?></p>
                 <p class="price_product"><?php echo number_format($each['price']) . "VND" ?></p>
                 <p style="text-align: center; color:rgb(170, 170, 170)"><?php echo $each['name_category'] ?></p>
+                <?php if(!empty($_SESSION['id'])) { ?>
+                          <a class="btn btn-primary w-100" href="?action=add_to_cart&id=<?php echo $each['id'] ?>">Thêm vào giỏi hàng</a>
+                <?php } ?>
             </a>
           </div>
         </div>
       </li>
       <?php endforeach ?>          
     </ul>
+
+
+
+<?php
+      if(!empty($_SESSION['status'])) {
+?>
+      <script>
+          alert("<?php echo $_SESSION['status'] ?>");
+      </script>
+<?php } 
+    unset($_SESSION['status']);
+?>

@@ -24,18 +24,26 @@
 			            <div class="col-md-4 heder_right " id="menu_right" style="color white;">
 			        		<div class="col-lg-offset-4">
 			            		<div class="login_signup">
-			            			<a class="login" href="index.php?action=login" style="color: white;">
-			            				<i class="fa fa-user"></i> 
-			            				Đăng nhập |
-			            			</a>
-			                        <a class="register" href="index.php?action=register" style="color: white;">
-			                        	<i class="fa fa-user-plus"></i> 
-			                        	Đăng ký
-			                    	</a>
-						        	<a class="text-white ml-3" href="index.php?action=cart">
-						        		<i class="fa fa-shopping-cart"></i>
-						        		 Giỏ hàng
-						        	</a>
+			            			<?php if(empty($_SESSION['id'])) { ?>
+				            			<a class="login" href="index.php?action=login" style="color: white;">
+				            				<i class="fa fa-user"></i> 
+				            				Đăng nhập |
+				            			</a>
+				                        <a class="register" href="index.php?action=register" style="color: white;">
+				                        	<i class="fa fa-user-plus"></i> 
+				                        	Đăng ký
+				                    	</a>
+							        <?php } else { ?>
+							        	<p class="text-white float-right">Xin chào <b><?php echo $_SESSION['name'] ?></b></p>
+							        	<a class="login" href="index.php?action=logout" style="color: white;">
+				            				<i class="fa-solid fa-power-off"></i>
+				            				Đăng xuất 
+				            			</a>
+							        	<a class="text-white ml-3" href="index.php?action=cart">
+							        		<i class="fa fa-shopping-cart"></i>
+							        		 Giỏ hàng
+							        	</a>
+							        <?php } ?>
 							   
 			                    </div>
 			            	</div>

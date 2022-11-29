@@ -18,7 +18,9 @@
 			<p>Giá sản phẩm: <b> <?php  echo number_format($each['price'],0,"",".") . ' VND' ?> </b></p>
 			<p>Danh mục sản phẩm: <b> <?php echo $each['name_category'] ?> </b></p>
 			<div class="mt-5">
-				<a class="btn btn-primary" href="?action=add_to_cart&id=<?php echo $each['id'] ?>">Thêm vào giỏi hàng</a>
+      <?php if(!empty($_SESSION['id'])) { ?>
+                <a class="btn btn-primary" href="?action=add_to_cart&id=<?php echo $each['id'] ?>">Thêm vào giỏi hàng</a>
+      <?php } ?>
 			</div>
 			
 		</div>

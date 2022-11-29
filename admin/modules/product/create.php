@@ -11,27 +11,27 @@
 		<form action="../modules/product/process.php" method="post" enctype="multipart/form-data">
 			<div class="form-group font-16">
 				<label for="name">Tên sản phẩm</label>
-    			<input type="text" class="form-control font-12" placeholder="Nhập tên danh mục cần thêm" id="name" name="name">
+    			<input type="text" class="form-control font-12" placeholder="Nhập tên danh mục cần thêm" id="name" name="name" required>
 			</div>
 			<div class="form-group font-16">
 				<label for="price">Giá sản phẩm</label>
-    			<input type="text" class="form-control font-12" placeholder="Nhập tên danh mục cần thêm" id="price" name="price">
+    			<input type="text" class="form-control font-12" placeholder="Nhập tên danh mục cần thêm" id="price" name="price" required>
 			</div>
 			<div class="form-group font-16">
 				<label for="quantity">Số lượng</label>
-    			<input type="text" class="form-control font-12" placeholder="Nhập tên danh mục cần thêm" id="quantity" name="quantity">
+    			<input type="text" class="form-control font-12" placeholder="Nhập tên danh mục cần thêm" id="quantity" name="quantity" required>
 			</div>
 			<div class="form-group font-16">
 				<label for="image">Hình ảnh</label>
-    			<input type="file" class="form-control-file font-12" placeholder="Nhập tên danh mục cần thêm" id="image" name="image">
+    			<input type="file" class="form-control-file font-12" placeholder="Nhập tên danh mục cần thêm" id="image" name="image" required>
 			</div>
 			<div class="form-group font-16">
 				<label for="content">Nội dung</label>
-    			<textarea class="form-control" id="content" name="content"></textarea>
+    			<textarea class="form-control" id="content" name="content" required></textarea>
 			</div>
 			<div class="form-group font-16">
 				<label for="description">Tóm tắt</label>
-    			<textarea class="form-control" id="description" name="description"></textarea>
+    			<textarea class="form-control" id="description" name="description" required></textarea>
 			</div>
 			<div class="form-group font-16"> 
 				<label for="category">Danh mục sản phẩm</label>

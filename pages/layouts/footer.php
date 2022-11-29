@@ -29,7 +29,7 @@
 								          </h6>
 								          <p>
 								          	<i class="fa fa-home"></i>
-								          	Ninh Kiều , Cần THơ
+								          	Ninh Kiều , Cần Thơ
 								          </p>
 								          <p>
 								          	<i class="fa fa-envelope"></i>

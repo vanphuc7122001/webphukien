@@ -23,7 +23,7 @@
         <label for="address">Địa Chỉ</label>
         <input type="text" class="form-control" id="address" placeholder="Nhập tên người dùng" name="address" required>
     </div>
-    <button type="submit" class="btn btn-primary w-100">Submit</button>
+    <button type="submit" class="btn btn-primary w-100">Đăng Ký</button>
   </form>
 </div>
 

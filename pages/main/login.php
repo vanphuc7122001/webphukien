@@ -11,7 +11,7 @@
         <label for="password">Mật Khẩu</label>
         <input type="password" class="form-control" id="password" placeholder="Nhập password" name="password" required>
     </div>
-    <button type="submit" class="btn btn-primary w-100">Submit</button>
+    <button type="submit" class="btn btn-primary w-100">Đăng Nhập</button>
   </form>
 </div>
 

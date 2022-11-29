@@ -39,7 +39,7 @@
 				            				<i class="fa-solid fa-power-off"></i>
 				            				Đăng xuất 
 				            			</a>
-							        	<a class="text-white ml-3" href="index.php?action=cart">
+							        	<a class="text-white ml-3" href="index.php?action=view_cart">
 							        		<i class="fa fa-shopping-cart"></i>
 							        		 Giỏ hàng
 							        	</a>

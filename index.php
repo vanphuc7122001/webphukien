@@ -13,7 +13,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-	<div class="container-fluid">
+	<div class="container-fluid" style="width: 1333px;">
 		<?php 
 			require_once './admin/config/connect.php';
 			require_once './pages/layouts/header.php';

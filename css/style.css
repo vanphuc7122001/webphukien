@@ -50,6 +50,9 @@ ul.product_list {
     margin: 0;
     list-style: none;
     width: 110%;
+    position: relative;
+    top: 0;
+    right: 0
 }
 p.title_product {
     text-align: center;
@@ -67,7 +70,7 @@ p.price_product {
 ul.product_list li {
     width: 21%;
     border: 1px solid rgb(170, 170, 170);
-    margin: 10px 7px;
+    margin: 10px 27px 10px 0px;
     float: left;
     /* background: #f5f5ec; */
     height: auto;
@@ -178,4 +181,25 @@ ul#tabs-nav li.active a{
   background-color: #FFF;
 }
 
-/*Form signup*/
+/*Pagination*/
+.nav_pagination{
+    position: absolute;
+    bottom: -60px;
+    right: 17px;
+}
+
+/*Button update quantity cart*/
+.quantity__cart--update{
+    font-size: 16px;
+    padding: 0 8px;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    color: #fff;
+}
+
+.quantity__cart--update:hover{
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #000;
+}

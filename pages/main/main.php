@@ -37,6 +37,18 @@
 				case 'logout':
 					require_once './pages/main/process/process_logout.php';
 					break;
+				case 'view_cart':
+					require_once './pages/main/cart/view_cart.php';
+					break;
+				case 'update_quantity_cart':
+					require_once './pages/main/cart/update_quantity_cart.php';
+					break;
+				case 'delete_from_cart':
+					require_once './pages/main/cart/delete_from_cart.php';
+					break;
+				case 'order':
+					require_once './pages/main/cart/order.php';
+					break;
 				default:
 					require_once './pages/main/home.php';
 					break;

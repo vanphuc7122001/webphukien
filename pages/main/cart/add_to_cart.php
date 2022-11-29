@@ -1,6 +1,5 @@
-<?php 
-session_start();
-// unset($_SESSION['cart']);
+<?php 	
+//unset($_SESSION['cart']);
 $id = $_GET['id'];
 
 if(empty($_SESSION['cart'][$id])){
@@ -16,5 +15,8 @@ if(empty($_SESSION['cart'][$id])){
 	$_SESSION['cart'][$id]['quantity']++;
 }
 
-print_r($_SESSION['cart']);
+$_SESSION['status'] = "Thêm vào giỏi hàng thành công";
+
+header('location:index.php');
 // echo json_encode($_SESSION['cart']);
+

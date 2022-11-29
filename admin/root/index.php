@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,12 +32,21 @@
 		
 	</div>
 	<script src="./bootstrap/bootstrap-4.6.2/js/bootstrap.bundle.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
+	<script src="./js/jquery/jquery.min.js"></script>
 	<!-- Link thư viện skeditor -->
 	<script src="./js/ckeditor/ckeditor.js"></script>
 	<script>
 		CKEDITOR.replace('content');
 		CKEDITOR.replace('description');
 	</script>
+	
+	<?php if(!empty($_SESSION['status'])) { ?>
+		<script>
+			alert("<?php echo $_SESSION['status'] ?>");
+		</script>
+	<?php } 
+		unset($_SESSION['status']);
+	?>
 </body>
 </html>

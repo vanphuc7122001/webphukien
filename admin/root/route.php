@@ -59,8 +59,24 @@ switch ($controller) {
 				break;
 		}
 		break;
+	case 'orders':
+		switch ($action) {
+			case 'view_detail':
+				require_once '../modules/orders/view_detail.php';
+				break;
+			case 'update':
+				require_once '../modules/orders/update.php';
+				break;
+			default:
+				require_once '../modules/orders/index.php';
+				break;
+		}
+		break;
 	default:
 		require_once '../modules/productCategory/index.php';
 		break;
 }
+
+
+mysqli_close($connect);
 

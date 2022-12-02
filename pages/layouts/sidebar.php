@@ -11,11 +11,15 @@
 		  <?php endforeach ?>
 		</div>
 			<!-- Tin tức -->
+<?php 
+	$sql_news_category = "select *  from news_category";
+	$rs_news_category = mysqli_query($connect,$sql_news_category);
+ ?>
 		<div class="list-group" style="margin-top: 20px;">
 		  <a href="#" class="list-group-item list-group-item-action active">Tin Tức</a>
-		  <a href="#" class="list-group-item list-group-item-action">First item</a>
-		  <a href="#" class="list-group-item list-group-item-action">Second item</a>
-		  <a href="#" class="list-group-item list-group-item-action">Third item</a>
+		  <?php foreach ($rs_news_category as $each_new): ?>
+		  <a href="?action=new_category&id=<?php echo $each_new['id'] ?>" class="list-group-item list-group-item-action"><?php echo $each_new['name'] ?></a>
+		  <?php endforeach ?>
 		</div>
 	</div>
 	<!-- End side bar -->

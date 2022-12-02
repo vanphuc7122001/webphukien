@@ -49,6 +49,9 @@
 				case 'order':
 					require_once './pages/main/cart/order.php';
 					break;
+				case 'new_category':
+					require_once './pages/main/new_category.php';
+					break;
 				default:
 					require_once './pages/main/home.php';
 					break;

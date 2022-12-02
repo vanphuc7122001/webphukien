@@ -68,21 +68,24 @@
 
 <?php 
 	$sql_page = "select * from news";
-	$count_record = mysqli_num_rows(mysqli_query($connect,$sql));
+	$count_record = mysqli_num_rows(mysqli_query($connect,$sql_page));
 	$page = ceil($count_record/$limit); // tổng số trang;
 
 	
  ?>
 
-<ul class="pagination font-16 mt-5 justify-content-end">
-	<?php if ($current_page > 1): ?>
-  		<li class="page-item"><a class="page-link" href="?controller=news&page=<?php echo (int)$current_page-1 ?>">Previous</a></li>
-	<?php endif ?>
-	<?php  for ($i=1; $i <= $page ; $i++) { ?>
-  		<li class="page-item"><a class="page-link" href="?controller=news&page=<?php echo $i ?>"><?php echo $i ?></a></li>
-  	<?php }  
-  	if ($current_page < $page): ?>
- 		<li class="page-item"><a class="page-link" href="?controller=news&page=<?php echo (int)$current_page+1 ?>">Next</a></li>
-  	<?php endif ?>
-
+<ul class="pagination justify-content-end mt-5">
+	<?php if($current_page > 1) { ?>
+		<li class="page-item">
+			<a class="page-link font-16" href="?controller=news&page=<?php echo (int)$current_page-1  ?>">Previous</a>
+		</li>
+	<?php } for ($i=1; $i <= $page ; $i++) { ?>
+		<li class="page-item">
+			<a <?php if ($i == $current_page) { echo 'style="opacity: 0.3;"';} else {echo '';}?>  class="page-link font-16"  href="?controller=news&page=<?php echo $i ?>"><?php echo $i ?></a>
+		</li>
+	<?php } if($current_page < $page) {?>
+		<li class="page-item">
+			<a class="page-link font-16" href="?controller=news&page=<?php echo (int)$current_page+1  ?>">Next</a>
+		</li>
+	<?php } ?>
 </ul>

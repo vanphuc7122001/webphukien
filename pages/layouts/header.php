@@ -21,28 +21,29 @@
 			        	</div>
 
 			        	<!--dang nhap -->
-			            <div class="col-md-4 heder_right " id="menu_right" style="color white;">
+			            <div class="col-md-4 heder_right " id="menu_right" style="margin-bottom: 10px;">
 			        		<div class="col-lg-offset-4">
 			            		<div class="login_signup">
 			            			<?php if(empty($_SESSION['id'])) { ?>
-				            			<a class="login" href="index.php?action=login" style="color: white;">
+				            			<a class="login text-decoration-none text-white" href="index.php?action=login">
 				            				<i class="fa fa-user"></i> 
 				            				Đăng nhập |
 				            			</a>
-				                        <a class="register" href="index.php?action=register" style="color: white;">
+				                        <a class="register text-decoration-none text-white" href="index.php?action=register">
 				                        	<i class="fa fa-user-plus"></i> 
 				                        	Đăng ký
 				                    	</a>
 							        <?php } else { ?>
-							        	<p class="text-white float-right">Xin chào <b><?php echo $_SESSION['name'] ?></b></p>
-							        	<a class="login" href="index.php?action=logout" style="color: white;">
-				            				<i class="fa-solid fa-power-off"></i>
-				            				Đăng xuất 
-				            			</a>
-							        	<a class="text-white ml-3" href="index.php?action=view_cart">
+							        	<a class="text-white text-decoration-none " href="index.php?action=view_cart">
 							        		<i class="fa fa-shopping-cart"></i>
 							        		 Giỏ hàng
 							        	</a>
+							        	<p class="text-white float-right">Xin chào <b><?php echo $_SESSION['name'] ?></b></p>
+							        	<a class="login ml-3 text-decoration-none text-white" href="index.php?action=logout">
+				            				<i class="fa-solid fa-power-off"></i>
+				            				Đăng xuất 
+				            			</a>
+							        	
 							        <?php } ?>
 							   
 			                    </div>

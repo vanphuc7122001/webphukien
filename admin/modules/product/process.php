@@ -1,4 +1,4 @@
-<?php 
+<?php session_start();
 
 include_once '../../config/connect.php';
 
@@ -25,6 +25,9 @@ if(isset($_POST['store'])){
 			('$name','$price','$quantity','$image_time','$description','$content','$id_category','$status')";
 	mysqli_query($connect,$sql);
 	move_uploaded_file($image_tmp,'./uploads/'.$image_time);
+	$_SESSION['status'] = 'Thành công';
+	$_SESSION['text'] = 'Bạn đã thêm sản phẩm thành công ';
+	$_SESSION['status_code'] = 'success';
 	header('location:../../root/index.php?controller=product');
 }elseif (isset($_POST['update'])) {
 	$id = $_POST['id'];
@@ -61,6 +64,9 @@ if(isset($_POST['store'])){
 		mysqli_query($connect,$sql);
 	}
 	mysqli_query($connect,$sql);
+	$_SESSION['status'] = 'Thành công';
+	$_SESSION['text'] = 'Bạn đã sửa sản phẩm thành công';
+	$_SESSION['status_code'] = 'success';
 	header('location:../../root/index.php?controller=product');
 }else{
 	$id = $_GET['id'];
@@ -71,5 +77,8 @@ if(isset($_POST['store'])){
 		}
 	$sql = "delete from product where id = '$id'";
 	mysqli_query($connect,$sql);
+	$_SESSION['status'] = 'Thành công';
+	$_SESSION['text'] = 'Bạn đã xóa sản phẩm thành công';
+	$_SESSION['status_code'] = 'success';
 	header('location:../../root/index.php?controller=product');
 }

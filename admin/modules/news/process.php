@@ -1,4 +1,4 @@
-<?php 
+<?php session_start();
 
 include_once '../../config/connect.php';
 
@@ -8,7 +8,7 @@ $description = $_POST['description'] ?? '';
 $id_category = $_POST['category'] ?? '';
 $status = $_POST['status'] ?? '';
 // xử lý hình ảnhs
-$image = $_FILES['image']['name'] ?? '';
+$image = $_FILES['image']['name'] ?? ''; 
 $image_tmp = $_FILES['image']['tmp_name'] ?? '';
 $image_time = time().'_'.$image;
 
@@ -17,6 +17,9 @@ if(isset($_POST['store'])){
 	        ('$name','$content','$description','$image_time','$status','$id_category')";
 	mysqli_query($connect,$sql);
 	move_uploaded_file($image_tmp,'./uploads/'.$image_time);
+	$_SESSION['status'] = 'Thành công';
+	$_SESSION['text'] = 'Bạn đã thêm thành công một bài viết mới';
+	$_SESSION['status_code'] = 'success';
 	header('location:../../root/index.php?controller=news');
 }elseif(isset($_POST['update'])){
 	$id = $_POST['id_update'];
@@ -47,6 +50,9 @@ if(isset($_POST['store'])){
 				where id = '$id'";
 	}
 	mysqli_query($connect,$sql);
+	$_SESSION['status'] = 'Thành công';
+	$_SESSION['text'] = 'Bạn đã sửa bài viết thành công';
+	$_SESSION['status_code'] = 'success';
 	header('location:../../root/index.php?controller=news');
 }else{
 	$id = $_GET['id'];
@@ -57,6 +63,9 @@ if(isset($_POST['store'])){
 	}
 	$sql = "delete from news where id = '$id'";
 	mysqli_query($connect,$sql);
+	$_SESSION['status'] = 'Thành công';
+	$_SESSION['text'] = 'Bạn đã xóa bài viết thành công';
+	$_SESSION['status_code'] = 'success';
 	header('location:../../root/index.php?controller=news');
 }
 

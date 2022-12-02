@@ -13,11 +13,15 @@
 			$_SESSION['id_admin'] = $each['id'];
 			$_SESSION['username'] = $each['username'];
 			$_SESSION['level'] = $each['level'];
-			$_SESSION['status'] = 'Đăng Nhập Thành Công';
+			$_SESSION['status'] = 'Thành công';
+			$_SESSION['text'] = 'Bạn đã đăng nhập thành công';
+			$_SESSION['status_code'] = 'success';
 			header('location:./root/index.php');
 		}else{
 			header('location:index.php');
-			$_SESSION['status'] = 'Đăng Nhập Thất Bại';
+			$_SESSION['status'] = 'Thất Bại';
+			$_SESSION['text'] = 'Tài khoản hoặc mật khẩu bị sai';
+			$_SESSION['status_code'] = 'error';
 
 		}
 	}

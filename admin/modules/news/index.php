@@ -1,8 +1,16 @@
 
 <?php 
+	$limit = 3;
+	
+	$current_page = $_GET['page'] ?? 1;
+	if($current_page == 1 || $current_page == ''){
+		$start = 0;
+	}else{
+		$start = ($current_page*$limit) - $limit;
+	}
 	$sql = "select news.*,news_category.name as name_category  
 			from news join news_category 
-			on news.id_category = news_category.id";
+			on news.id_category = news_category.id order by news.id limit $start,$limit";
 	$result = mysqli_query($connect,$sql);
  ?>
 <div class="card rounded">
@@ -54,3 +62,27 @@
 		</table>
 	</div>
 </div>
+
+
+<!-- Phân Trang -->
+
+<?php 
+	$sql_page = "select * from news";
+	$count_record = mysqli_num_rows(mysqli_query($connect,$sql));
+	$page = ceil($count_record/$limit); // tổng số trang;
+
+	
+ ?>
+
+<ul class="pagination font-16 mt-5 justify-content-end">
+	<?php if ($current_page > 1): ?>
+  		<li class="page-item"><a class="page-link" href="?controller=news&page=<?php echo (int)$current_page-1 ?>">Previous</a></li>
+	<?php endif ?>
+	<?php  for ($i=1; $i <= $page ; $i++) { ?>
+  		<li class="page-item"><a class="page-link" href="?controller=news&page=<?php echo $i ?>"><?php echo $i ?></a></li>
+  	<?php }  
+  	if ($current_page < $page): ?>
+ 		<li class="page-item"><a class="page-link" href="?controller=news&page=<?php echo (int)$current_page+1 ?>">Next</a></li>
+  	<?php endif ?>
+
+</ul>

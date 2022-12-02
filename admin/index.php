@@ -37,13 +37,20 @@
 	<script src="./root/bootstrap/bootstrap-4.6.2/js/bootstrap.bundle.min.js"></script>
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
 	<script src="./root/js/jquery/jquery.min.js"></script>
+	<script src="./root/js/sweetalert/sweetalert.min.js"></script>
 
-	<?php if(!empty($_SESSION['status'])) { ?>
+	<?php if(isset($_SESSION['status'])) { ?>
 		<script>
-			alert("<?php echo $_SESSION['status'] ?>");
+			swal({
+				  title: "<?php echo $_SESSION['status'];?>",
+				  text: "<?php echo $_SESSION['text'];?>",
+				  icon: "<?php echo $_SESSION['status_code']; ?>",
+			});
 		</script>
 	<?php } 
 		unset($_SESSION['status']);
+		unset($_SESSION['text']);
+		unset($_SESSION['status_code']);
 	?>
 </body>
 </html>

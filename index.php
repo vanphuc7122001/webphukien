@@ -26,6 +26,7 @@
 
 
 	<script src="js/jquery/jquery.min.js"></script>
+	<script src="js/sweetalert/sweetalert.min.js"></script>
 	<script>
 		// Show the first tab and hide the rest
 		$('#tabs-nav li:first-child').addClass('active');
@@ -42,5 +43,18 @@
 				return false;
 		});
 	</script>
+	<?php if(isset($_SESSION['status'])) { ?>
+		<script>
+			swal({
+				  title: "<?php echo $_SESSION['status'];?>",
+				  text: "<?php echo $_SESSION['text'];?>",
+				  icon: "<?php echo $_SESSION['status_code']; ?>",
+			});
+		</script>
+	<?php } 
+		unset($_SESSION['status']);
+		unset($_SESSION['text']);
+		unset($_SESSION['status_code']);
+	?>
 </body>
 </html>

@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php session_start(); 
+	require_once './check_admin_login.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,17 +38,25 @@
 	<script src="./js/jquery/jquery.min.js"></script>
 	<!-- Link thư viện skeditor -->
 	<script src="./js/ckeditor/ckeditor.js"></script>
+	<script src="./js/sweetalert/sweetalert.min.js"></script>
+
 	<script>
 		CKEDITOR.replace('content');
 		CKEDITOR.replace('description');
 	</script>
 	
-	<?php if(!empty($_SESSION['status'])) { ?>
+	<?php if(isset($_SESSION['status'])) { ?>
 		<script>
-			alert("<?php echo $_SESSION['status'] ?>");
+			swal({
+				  title: "<?php echo $_SESSION['status'];?>",
+				  text: "<?php echo $_SESSION['text'];?>",
+				  icon: "<?php echo $_SESSION['status_code']; ?>",
+			});
 		</script>
 	<?php } 
 		unset($_SESSION['status']);
+		unset($_SESSION['text']);
+		unset($_SESSION['status_code']);
 	?>
 </body>
 </html>

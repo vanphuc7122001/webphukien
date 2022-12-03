@@ -52,6 +52,9 @@
 				case 'new_category':
 					require_once './pages/main/new_category.php';
 					break;
+				case 'news_detail':
+					require_once './pages/main/news_detail.php';
+					break;
 				default:
 					require_once './pages/main/home.php';
 					break;

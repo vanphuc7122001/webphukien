@@ -1,7 +1,7 @@
 <?php 
   $id = $_GET['id'];
   $sql = "select product.*, product_category.name as name_category from product 
-          join product_category on product.id_category = product_category.id where product.id_category = '$id'";
+          join product_category on product.id_category = product_category.id where product.id_category = '$id' and product.status = 1";
   $result = mysqli_query($connect,$sql);
   $row = mysqli_fetch_assoc($result); // hàm này lấy về 1 hàng kết quả
  ?>

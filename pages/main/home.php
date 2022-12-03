@@ -38,7 +38,9 @@
 
   // số bản ghi có trong 1 trang
   $sql = "select product.*, product_category.name as name_category from product 
-          join product_category on product.id_category = product_category.id limit $start,$limit";
+          join product_category on product.id_category = product_category.id where product.status = 1 limit $start,$limit";
+
+  // die($sql);
   $result = mysqli_query($connect,$sql);
  ?>
 <h3 class="font-weight-light text-center my-4 text-danger">TẤT CẢ SẢN PHẨM</h3>

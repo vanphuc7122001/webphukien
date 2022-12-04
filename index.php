@@ -43,6 +43,9 @@
 				return false;
 		});
 	</script>
+
+
+	
 	<?php if(isset($_SESSION['status'])) { ?>
 		<script>
 			swal({

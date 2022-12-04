@@ -31,7 +31,8 @@ foreach ($cart as $product_id => $row) {
 		$sql = "insert into order_product(order_id,product_id,quantity) values ('$order_id','$product_id','$quantity')";
 		mysqli_query($connect,$sql);
 }
-
-$_SESSION['status'] = 'Bạn đã đặt hàng thành công đơn hàng sẻ được giao đến bạn sớm';
+$_SESSION['status'] = 'Thành công';
+$_SESSION['status_code'] = 'success';
+$_SESSION['text'] = 'Bạn đã đặt hàng thành công đơn hàng sẻ được giao đến bạn sớm';
 unset($_SESSION['cart']);
-header('location:index.php');
+header('location:index.php?action=view_cart');

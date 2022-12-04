@@ -15,8 +15,9 @@ if(empty($_SESSION['cart'][$id])){
 	$_SESSION['cart'][$id]['quantity']++;
 }
 
-$_SESSION['status'] = "Thêm vào giỏi hàng thành công";
+$_SESSION['status'] = 'Bạn đã đặt hàng thành công đơn hàng sẻ giao đến bạn trong vòng 3 đến 7 ngày';
 
-header('location:index.php');
+header('location:../../../index.php');
+
 // echo json_encode($_SESSION['cart']);
 

@@ -12,7 +12,7 @@
 			    		 <div class="col-md-4" style="color: white;margin-top: 20px;">
 			            	<form method="post" action="index.php?action=search">
 				                <div class="header__search">
-				                    <input type="text" placeholder="Nhập tên sản phẩm cần tìm kiếm ..." name="tukhoa" class="form-control ">
+				                    <input type="text" placeholder="Nhập tên sản phẩm cần tìm kiếm ..." name="search" class="form-control ">
                                     <button type="submit" class="btn btn-primary">
                                         <i class="fa-solid fa-magnifying-glass"></i>
                                     </button>
@@ -21,11 +21,11 @@
 			        	</div>
 
 			        	<!--dang nhap -->
-			            <div class="col-md-4 heder_right " id="menu_right" style="margin-bottom: 10px;">
+			            <div class="col-md-4 heder_right " id="menu_right" style="">
 			        		<div class="col-lg-offset-4">
 			            		<div class="login_signup">
 			            			<?php if(empty($_SESSION['id'])) { ?>
-				            			<a class="login text-decoration-none text-white" href="index.php?action=login">
+				            			<a class="login text-decoration-none text-white" href="index.php?action=login" style="margin-top: 10px;"> 
 				            				<i class="fa fa-user"></i> 
 				            				Đăng nhập |
 				            			</a>

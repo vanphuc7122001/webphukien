@@ -19,6 +19,9 @@
                 <p class="title_product"><?php echo $each['name'] ?></p>
                 <p class="price_product"><?php  echo number_format($each['price'],0,"",".") . ' VND' ?></p>
                 <p style="text-align: center; color:rgb(170, 170, 170)"><?php echo $each['name_category'] ?></p>
+                <?php if(!empty($_SESSION['id'])) { ?>
+                          <a class="btn btn-primary w-100" href="?action=add_to_cart&id=<?php echo $each['id'] ?>">Thêm vào giỏi hàng</a>
+                <?php } ?>
             </a>
           </div>
         </div>

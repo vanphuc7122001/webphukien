@@ -15,13 +15,3 @@
   </form>
 </div>
 
-
-<?php
-      if(!empty($_SESSION['status'])) {
-?>
-      <script>
-          alert("<?php echo $_SESSION['status'] ?>");
-      </script>
-<?php } 
-    unset($_SESSION['status']);
-?>

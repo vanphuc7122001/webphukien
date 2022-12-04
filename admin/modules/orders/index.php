@@ -1,10 +1,20 @@
 <?php 
+
+	$limit = 3;
+	$current_page = $_GET['page'] ?? 1;
+	if($current_page == 1 || $current_page == ''){
+		$start = 0;
+	}
+	else{
+		$start = ($current_page*$limit)-$limit;
+	}
 	$sql = "select orders.*, 
 			user.name as user_name, 
 			user.phone_number as user_phone,
 			user.address as user_address 
 			from orders join user
-			on orders.user_id = user.id";
+			on orders.user_id = user.id 
+			limit $start,$limit";
 	$result = mysqli_query($connect,$sql);
  ?>
 <div class="card">
@@ -75,3 +85,30 @@
 		</table>
 	</div>
 </div>
+
+
+<!-- Phân trang -->
+
+
+<?php 
+	$sql_page = "select * from orders";
+	$rs_page = mysqli_query($connect,$sql_page);
+	$row_count = mysqli_num_rows($rs_page);
+	$page = ceil($row_count/3);	// tổng số trang
+ ?>
+
+<ul class="pagination justify-content-end mt-5">
+	<?php if($current_page > 1) { ?>
+		<li class="page-item">
+			<a class="page-link font-16" href="?controller=orders&page=<?php echo (int)$current_page-1  ?>">Previous</a>
+		</li>
+	<?php } for ($i=1; $i <= $page ; $i++) { ?>
+		<li class="page-item">
+			<a <?php if ($i == $current_page) { echo 'style="opacity: 0.3;"';} else {echo '';}?>  class="page-link font-16"  href="?controller=orders&page=<?php echo $i ?>"><?php echo $i ?></a>
+		</li>
+	<?php } if($current_page < $page) {?>
+		<li class="page-item">
+			<a class="page-link font-16" href="?controller=orders&page=<?php echo (int)$current_page+1  ?>">Next</a>
+		</li>
+	<?php } ?>
+</ul>
